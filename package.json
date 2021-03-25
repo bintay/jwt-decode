@@ -1,9 +1,9 @@
 {
-    "name": "jwt-decode",
+    "name": "jwt-decode-non-json",
     "version": "3.1.2",
     "description": "Decode JWT tokens, mostly useful for browser applications.",
-    "main": "build/jwt-decode.cjs.js",
-    "module": "build/jwt-decode.esm.js",
+    "main": "build/jwt-decode-non-json.cjs.js",
+    "module": "build/jwt-decode-non-json.esm.js",
     "types": "index.d.ts",
     "keywords": [
         "jwt",
@@ -11,10 +11,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git://github.com/auth0/jwt-decode"
+        "url": "git://github.com/bintay/jwt-decode-non-json"
     },
-    "url": "https://github.com/auth0/jwt-decode/issues",
-    "homepage": "https://github.com/auth0/jwt-decode#readme",
+    "url": "https://github.com/bintay/jwt-decode-non-json/issues",
+    "homepage": "https://github.com/bintay/jwt-decode-non-json#readme",
     "scripts": {
         "dev": "rollup -m -c",
         "build": "rimraf build && rollup -m -c --environment NODE_ENV:production",
@@ -22,7 +22,8 @@
     },
     "author": "Jose F. Romaniello <jfromaniello@gmail.com> (http://joseoncode.com)",
     "contributors": [
-        "Sam Bellen <sam.bellen@auth0.com>"
+        "Sam Bellen <sam.bellen@auth0.com>",
+        "Ben Taylor <bentaylor@bentaylor.me>"
     ],
     "license": "MIT",
     "dependencies": {},

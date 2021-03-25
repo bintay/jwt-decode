@@ -5,7 +5,7 @@ import sourcemaps from "rollup-plugin-sourcemaps";
 import serve from "rollup-plugin-serve";
 import livereload from "rollup-plugin-livereload";
 
-const EXPORT_NAME = "jwt-decode";
+const EXPORT_NAME = "jwt-decode-non-json";
 const isProduction = process.env.NODE_ENV === "production";
 const plugins = [
     resolve({
@@ -21,8 +21,8 @@ const plugins = [
 export default [{
         input: "lib/index.standalone.js",
         output: {
-            name: "jwt_decode",
-            file: "build/jwt-decode.js",
+            name: "jwt_decode_non_json",
+            file: "build/jwt-decode-non-json.js",
             format: "umd",
         },
     },
@@ -30,7 +30,7 @@ export default [{
         input: "lib/index.cjs.js",
         output: [{
             name: EXPORT_NAME,
-            file: "build/jwt-decode.cjs.js",
+            file: "build/jwt-decode-non-json.cjs.js",
             format: "cjs",
             exports: "auto",
         }, ],
@@ -40,7 +40,7 @@ export default [{
         input: "lib/index.js",
         output: [{
             name: EXPORT_NAME,
-            file: "build/jwt-decode.esm.js",
+            file: "build/jwt-decode-non-json.esm.js",
             format: "esm",
         }, ],
         plugins: [!isProduction &&

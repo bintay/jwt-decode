@@ -22,4 +22,4 @@
 
 **Warning: this version has some potentially breaking changes!**
 
-- If you've previously imported the library as `import * as jwt_decode from 'jwt-decode'`, you'll have to change your import to `import jwt_decode from 'jwt-decode';`.
+- If you've previously imported the library as `import * as jwt_decode from 'jwt-decode-non-json'`, you'll have to change your import to `import jwt_decode from 'jwt-decode-non-json';`.

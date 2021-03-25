@@ -1,6 +1,6 @@
 This fork of [auth0/jwt-decode](https://github.com/auth0/jwt-decode) allows tokens with non-json payloads to be parsed. Why would you ever do this? Isn't JSON in the name? Yeah, but sometimes APIs are dumb.
 
-## **jwt-decode** is a small browser library that helps decoding JWTs token which are Base64Url encoded.
+## **jwt-decode-non-json** is a small browser library that helps decoding JWTs token which are Base64Url encoded.
 
 **IMPORTANT:** This library doesn't validate the token, any well formed JWT can be decoded. You should validate the token in your server-side logic by using something like [express-jwt](https://github.com/auth0/express-jwt), [koa-jwt](https://github.com/stiang/koa-jwt), [Owin Bearer JWT](https://github.com/michaelnoonan/Auth0-Owin-JwtBearerAuthentication), etc.
 
@@ -8,28 +8,20 @@ This fork of [auth0/jwt-decode](https://github.com/auth0/jwt-decode) allows toke
 
 **Warning: When upgrading from version `2` to `3`, there's a potentially breaking change**
 
-If you've previously imported the library as `import * as jwt_decode from 'jwt-decode'`, you'll have to change your import to `import jwt_decode from 'jwt-decode';`.
+If you've previously imported the library as `import * as jwt_decode from 'jwt-decode-non-json'`, you'll have to change your import to `import jwt_decode from 'jwt-decode-non-json';`.
 
 ---
 
-## Sponsor
-
-|||
-|-|-|
-|![auth0 logo](https://user-images.githubusercontent.com/83319/31722733-de95bbde-b3ea-11e7-96bf-4f4e8f915588.png)|If you want to quickly add secure token-based authentication to your JavaScript projects, feel free to check Auth0's JavaScript SDK and free plan at [auth0.com/developers](https://auth0.com/developers?utm_source=GHsponsor&utm_medium=GHsponsor&utm_campaign=jwt-decode&utm_content=auth)|
-
 ## Installation
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fauth0%2Fjwt-decode.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fauth0%2Fjwt-decode?ref=badge_shield)
 
 Install with NPM or Yarn.
 
-Run `npm install jwt-decode` or `yarn add jwt-decode` to install the library.
+Run `npm install jwt-decode-non-json` or `yarn add jwt-decode-non-json` to install the library.
 
 ## Usage
 
 ```javascript
-import jwt_decode from "jwt-decode";
+import jwt_decode from "jwt-decode-non-json";
 
 var token = "eyJ0eXAiO.../// jwt token";
 var decoded = jwt_decode(token);
@@ -61,7 +53,7 @@ The `jwt_decode` function will return an `unknown` type by default. You can spec
 The package also exports types for a `JwtHeader` and `JwtPayload` with some default claims. You can either use them as-is, or extend them to include non standard claims or properties.
 
 ```typescript
-import jwtDecode, { JwtPayload } from "jwt-decode";
+import jwtDecode, { JwtPayload } from "jwt-decode-non-json";
 
 const token: string = "eyJhsw5c";
 const decoded = jwtDecode<JwtPayload>(token); // Returns with the JwtPayload type
@@ -70,21 +62,21 @@ const decoded = jwtDecode<JwtPayload>(token); // Returns with the JwtPayload typ
 ## Use as a CommonJS package
 
 ```javascript
-const jwt_decode = require('jwt-decode');
+const jwt_decode = require('jwt-decode-non-json');
 ...
 ```
 
 ## Include with a script tag
 
-Copy the file `jwt-decode.js` from the `build/` folder to your project somewhere, then include like so:
+Copy the file `jwt-decode-non-json.js` from the `build/` folder to your project somewhere, then include like so:
 
 ```html
-<script src="jwt-decode.js"></script>
+<script src="jwt-decode-non-json.js"></script>
 ```
 
 ## Older versions
 
-If you want to use the library through Bower, an HTML import, use [version `v2.2.0`](https://github.com/auth0/jwt-decode/tree/v2.2.0). It has the same functionality.
+If you want to use the library through Bower, an HTML import, use [version `v2.2.0`](https://github.com/auth0/jwt-decode/tree/v2.2.0) of jwt-decode. It has the same functionality (minus non-json tokens).
 
 ## Develop
 
@@ -104,5 +96,3 @@ This project is licensed under the MIT license. See the [LICENSE](LICENSE) file 
 
 [browserify]: http://browserify.org
 [webpack]: http://webpack.github.io/
-
-# [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fauth0%2Fjwt-decode.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fauth0%2Fjwt-decode?ref=badge_large)

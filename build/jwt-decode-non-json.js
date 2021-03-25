@@ -96,11 +96,20 @@
         }
 
         options = options || {};
-        var pos = options.header === true ? 0 : 1;
+        const pos = options.header === true ? 0 : 1;
+        let base64decoded;
         try {
-            return JSON.parse(base64_url_decode(token.split(".")[pos]));
+            base64decoded = base64_url_decode(token.split(".")[pos]);
         } catch (e) {
             throw new InvalidTokenError("Invalid token specified: " + e.message);
+        }
+
+        const maybeParseFloat = (x) => parseFloat(x) || x;
+
+        try {
+            return JSON.parse(base64decoded);
+        } catch (e) {
+            return maybeParseFloat(base64decoded);
         }
     }
 
@@ -120,4 +129,4 @@
     }
 
 })));
-//# sourceMappingURL=jwt-decode.js.map
+//# sourceMappingURL=jwt-decode-non-json.js.map

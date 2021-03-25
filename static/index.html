@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Auth0 - JWT-Decode</title>
+    <title>JWT-Decode-non-json</title>
     <meta charset="utf-8" />
   </head>
 
@@ -10,15 +10,11 @@
     <pre><code class="js-decoded"></code></pre>
 
     <script type="module">
-      import jwtDecode from "/jwt-decode.esm.js";
-      var token =
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmb28iOiJiYXIiLCJleHAiOjEzOTMyODY4OTMsImlhdCI6MTM5MzI2ODg5M30.4-iaDojEVl0pJQMjrbM1EzUIfAZgsbK_kgnVyVxFSVo";
-      var decoded = jwtDecode(token);
-      document.querySelector(".js-decoded").innerHTML = JSON.stringify(
-        decoded,
-        null,
-        4
-      );
+      import jwtDecode from "/build/jwt-decode-non-json.esm.js";
+      const token =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.UnVsZXMgYW5kIG1vZGVscyBkZXN0cm95IGdlbml1cyBhbmQgYXJ0._ANvyRTNrsxp4M09FGQB0QdmYqXshi3bT9rqxvl1eco";
+      const decoded = jwtDecode(token);
+      document.querySelector(".js-decoded").innerHTML = decoded;
     </script>
   </body>
 </html>
